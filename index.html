@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Confident — AI Clinical Simulation</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#060f11;color:#fff;font-family:'Instrument Serif',serif;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;border-bottom:1px solid rgba(201,168,76,.12);}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:28px;height:28px;border-radius:5px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28);display:flex;align-items:center;justify-content:center;}
+.wm{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;letter-spacing:3px;color:#fff;}
+.wm span{color:#C9A84C;}
+.nav-links{display:flex;gap:24px;}
+.nav-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(168,216,223,.45);}
+.btn-gold{background:#C9A84C;color:#060f11;border:none;border-radius:4px;padding:10px 20px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;}
+.hero{padding:80px 48px 64px;border-bottom:1px solid rgba(168,216,223,.07);}
+.kicker{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#C9A84C;margin-bottom:18px;}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:52px;line-height:1.02;letter-spacing:-1.5px;margin-bottom:18px;max-width:680px;}
+h1 em{font-style:normal;color:#C9A84C;}
+.sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;color:rgba(168,216,223,.7);line-height:1.55;margin-bottom:32px;max-width:560px;}
+.cta-row{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+.btn-ghost{background:transparent;color:rgba(168,216,223,.55);border:1px solid rgba(168,216,223,.18);border-radius:4px;padding:14px 22px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;}
+.price-note{font-family:'DM Mono',monospace;font-size:9px;color:rgba(201,168,76,.55);letter-spacing:1px;}
+.founder{padding:48px;border-bottom:1px solid rgba(168,216,223,.07);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.quote{border-left:3px solid #C9A84C;padding-left:20px;}
+.quote-text{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:#fff;line-height:1.6;margin-bottom:10px;}
+.quote-attr{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,.6);}
+.founder-story{font-size:14px;color:rgba(168,216,223,.7);line-height:1.8;}
+.scenarios{padding:48px;border-bottom:1px solid rgba(168,216,223,.07);}
+.section-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#C9A84C;margin-bottom:18px;}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.sc{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.1);border-left:3px solid #C9A84C;border-radius:3px;padding:16px;}
+.sc-badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:8px;}
+.badge-r{background:rgba(192,57,43,.15);color:#ff8a7a;border:1px solid rgba(192,57,43,.3);}
+.badge-g{background:rgba(201,168,76,.1);color:#C9A84C;border:1px solid rgba(201,168,76,.25);}
+.badge-t{background:rgba(2,128,144,.1);color:#A8D8DF;border:1px solid rgba(2,128,144,.25);}
+.sc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;}
+.sc-desc{font-size:12px;color:rgba(168,216,223,.5);line-height:1.55;}
+.pricing{padding:48px;background:rgba(1,82,92,.1);}
+.price-inner{display:flex;justify-content:space-between;align-items:center;}
+.price-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
+.price-big{font-family:'Syne',sans-serif;font-weight:800;font-size:60px;line-height:1;}
+.price-sub{font-family:'DM Mono',monospace;font-size:9px;color:rgba(168,216,223,.45);letter-spacing:1px;margin-top:6px;}
+footer{background:#01525C;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #C9A84C;}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;letter-spacing:4px;color:#fff;}
+.footer-logo span{color:#C9A84C;}
+.footer-info{font-family:'DM Mono',monospace;font-size:9px;color:#A8D8DF;letter-spacing:1px;text-align:right;line-height:1.8;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <div class="logo-icon"><svg width="14" height="11" viewBox="0 0 32 24" fill="none"><path d="M1 12h5l3-10 6 20 4-10 4 6h8" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="wm">CODE <span>CONFIDENT</span></div>
+  </div>
+  <div class="nav-links"><div class="nav-link">Scenarios</div><div class="nav-link">For Hospitals</div><div class="nav-link">About</div></div>
+  <button class="btn-gold" onclick="window.location.href='[YOUR_GUMROAD_LINK]'">Get Access — $47</button>
+</nav>
+
+<div class="hero">
+  <div class="kicker">AI Clinical Simulation · Founding Member Access</div>
+  <h1>Train for the<br>moment <em>before</em><br>the code.</h1>
+  <div class="sub">AI-powered emergency simulation that builds the clinical judgment no algorithm can teach — and exposes the gaps you didn't know you had.</div>
+  <div class="cta-row">
+    <button class="btn-gold" style="padding:15px 30px;font-size:10px;" onclick="window.location.href='[YOUR_GUMROAD_LINK]'">Get Founding Member Access — $47 →</button>
+    <button class="btn-ghost" onclick="window.location.href='[YOUR_DEMO_LINK]'">Try Free Demo</button>
+  </div>
+  <div class="price-note">First 50 nurses · One-time payment · Price goes to $97 after beta closes</div>
+</div>
+
+<div class="founder">
+  <div class="quote">
+    <div class="quote-text">"I started in the ICU in December 2024. Within weeks I realized nothing had prepared me to think under that pressure. So I built what I needed."</div>
+    <div class="quote-attr">Judith Gil, MSN-RN · New Grad ICU Nurse · Creator of Code Confident</div>
+  </div>
+  <div class="founder-story"><strong style="color:#fff;">Built from inside the experience, not above it.</strong><br><br>Code Confident wasn't built by a veteran nurse looking back. It was built by a new grad ICU nurse living the gap in real time — who knew the algorithms but needed to train the judgment that algorithms can't replace.</div>
+</div>
+
+<div class="scenarios">
+  <div class="section-title">Six Scenarios — Active Now</div>
+  <div class="sc-grid">
+    <div class="sc"><div class="sc-badge badge-r">Critical</div><div class="sc-title">Telemetry Alarm — Room 412</div><div class="sc-desc">Unresponsive. No pulse. Chaotic rhythm. You have seconds.</div></div>
+    <div class="sc"><div class="sc-badge badge-r">Critical</div><div class="sc-title">MICU Alarm — Bed 3</div><div class="sc-desc">Organized rhythm. No pulse. The most dangerous mistake is the obvious one.</div></div>
+    <div class="sc"><div class="sc-badge badge-g">Advanced</div><div class="sc-title">Routine Assessment — Room 208</div><div class="sc-desc">No code yet. Just you and a closing window.</div></div>
+    <div class="sc"><div class="sc-badge badge-t">Diagnostic</div><div class="sc-title">ED Presentation — Bay 7</div><div class="sc-desc">FAST negative. NIHSS zero. Every protocol says fine. She's not.</div></div>
+    <div class="sc"><div class="sc-badge badge-t">Diagnostic</div><div class="sc-title">ED Walk-In — Bay 12</div><div class="sc-desc">No chest pain. No tearing. Just weakness. The presentation that kills.</div></div>
+    <div class="sc"><div class="sc-badge badge-t">Diagnostic</div><div class="sc-title">Morning Assessment — Room 315</div><div class="sc-desc">Drowsy. Tremoring. The interaction hiding in the MAR.</div></div>
+  </div>
+</div>
+
+<div class="pricing">
+  <div class="price-inner">
+    <div>
+      <div class="price-tag">Founding Member · First 50 Nurses Only</div>
+      <div class="price-big">$47</div>
+      <div class="price-sub">One-time · Full access forever · Goes to $97 after beta closes</div>
+    </div>
+    <div style="text-align:center;">
+      <button class="btn-gold" style="padding:18px 36px;font-size:11px;" onclick="window.location.href='[YOUR_GUMROAD_LINK]'">Get Access Now →</button>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:rgba(168,216,223,.3);letter-spacing:1px;margin-top:8px;">Free demo available · No credit card for demo</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">CODE <span>CONFIDENT</span></div>
+  <div class="footer-info">Judith Gil, MSN-RN · @msjudith.gil<br>thejudithgil@gmail.com · 2025</div>
+</footer>
+
+</body>
+</html>
